@@ -39,7 +39,7 @@ const FileUpload = ({ onUploadSuccess }) => {
 
     try {
       // Step 1: Upload the file to ensure it exists
-      const uploadResponse = await fetch("http://localhost:3000/api/upload", {
+      const uploadResponse = await fetch("https://csv-to-json-backend.onrender.com/api/upload", {
         method: "POST",
         body: formData,
       });
@@ -53,7 +53,7 @@ const FileUpload = ({ onUploadSuccess }) => {
       const fileName = uploadResult.filePath.split("/").pop();
 
       // Step 2: Process the uploaded file
-      const processResponse = await fetch(`http://localhost:3000/api/process/${fileName}`, {
+      const processResponse = await fetch(`https://csv-to-json-backend.onrender.com/api/process/${fileName}`, {
         method: "POST",
       });
 
